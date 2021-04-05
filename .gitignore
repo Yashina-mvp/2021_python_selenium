@@ -1,3 +1,9 @@
+#IDEA PROJECT
+.idea
+
+#Drivers directory
+drivers/chromedriver
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
