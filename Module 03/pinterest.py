@@ -37,6 +37,16 @@ def search(wait: WebDriverWait, value: str):
     textbox.send_keys(value)
     textbox.send_keys(Keys.ENTER)
 
+def catalog(wait: WebDriverWait):
+    tags_bar = (By.XPATH, "//*[@data-test-id='search-guide")
+    return wait.until(EC.visibility_of_all_elements_located(tags_bar))
+
+def print_tags(wait: WebDriverWait):
+    for tag in catalog(my_wait):
+        print(f'{tag.text}')
+
+
+
 
 if __name__ =='__main__':
     my_driver = get_driver('chrome')
@@ -50,6 +60,8 @@ if __name__ =='__main__':
 
     #Search Selenium
     search(my_wait, 'Selenium')
+    catalog(my_wait)
+    print_tags(my_wait)
 
     #Exit
     my_driver.quit()
