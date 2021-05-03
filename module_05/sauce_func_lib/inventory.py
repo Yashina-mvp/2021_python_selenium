@@ -1,11 +1,13 @@
 """Includes function to control sauce lab inventory page."""
+from collections import namedtuple
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
-from selenium.webdriver.support.import expected_conditions as EC
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
 InventoryItem = namedtuple('InventoryItem', ['title', 'description', 'price'])
+
 
 def get_inventory(wait: WebDriverWait) -> list:
     """Get inventory items.
