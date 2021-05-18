@@ -25,5 +25,4 @@ def get_inventory(wait: WebDriverWait) -> list:
         price = element.find_element_by_class_name('inventory_item_price').text
         tmp = InventoryItem(title, description, price)
         result.append(tmp)
-
     return result
